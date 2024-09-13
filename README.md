@@ -15,6 +15,7 @@ These installation steps assumes that docker is already installed.
 5. `docker-compose up -d`
 6. `docker exec -ti docker_api_1 bash` 
 7. `composer install`
+8. `cp env.example .env`
 
 # Testing
 1. Access the app's container `docker exec -ti docker_api_1 bash`
@@ -46,3 +47,5 @@ Also added dependency injection (DI) to increase the testability of the implemen
 ![img_5.png](img_5.png)
 6. Written a sample unit test
 ![img_6.png](img_6.png)
+7. Added .env for environment variable control, the database credentials are stored here.
+![img_7.png](img_7.png)
