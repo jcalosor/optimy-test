@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use App\Accessors\News;
 use App\Utils\CommentManager;
 use App\Utils\DB;
 use App\Utils\NewsManager;

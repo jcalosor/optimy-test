@@ -2,8 +2,6 @@
 
 namespace App\Utils;
 
-use App\Accessors\Comment;
-
 class CommentManager
 {
     public function __construct(protected DB $db)
