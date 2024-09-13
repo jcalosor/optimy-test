@@ -45,3 +45,4 @@ Also added dependency injection (DI) to increase the testability of the implemen
 5. Refactored `App\Utils\NewsManager` class and implemented a new method `listNewsWithComments` that minimizes the database call to only 1 for getting the list of news along with it's respective comments
 ![img_5.png](img_5.png)
 6. Written a sample unit test
+![img_6.png](img_6.png)
