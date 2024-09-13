@@ -1,0 +1,47 @@
+version: '2.4'
+services:
+
+    # Backend Definition ------------------------------
+    database:
+      image: mysql:5.7
+      environment:
+        - "MYSQL_ROOT_PASSWORD=vuQ4NTLahMJGUKaDCx6s"
+        - "MYSQL_DATABASE=phptest"
+      ports:
+        - "33069:3306"
+    api-server:
+        build:
+            context: ./
+            dockerfile: api.server.docker
+        volumes:
+            - ../:/var/www
+        ports:
+            - "9091:80"
+        environment:
+            - VIRTUAL_HOST=api.optimy.local
+        links:
+            - api
+        depends_on:
+            - api
+    api:
+        build:
+            context: ./
+            dockerfile: api.docker
+        volumes:
+            - ../:/var/www
+        links:
+            - database
+        environment:
+            - "DB_PORT=3306"
+            - "DB_HOST=database"
+    # Proxy Definition ------------------------------
+    nginx-proxy:
+        image: jwilder/nginx-proxy
+        ports:
+            - "80:80"
+        volumes:
+            - /var/run/docker.sock:/tmp/docker.sock:ro
+networks:
+    default:
+        external:
+            name: nginx-proxy

@@ -1,0 +1,1 @@
+cd /var/www && apt-get install php74 php74-mbstring php74-xml php74-fpm php74-pdo php74-mysqlnd mysql57-server nginx git && chown -R $USER:www-data . && chmod -R 777 storage && chmod -R 777 bootstrap/cache && cp .env.example .env && php artisan key:generate
