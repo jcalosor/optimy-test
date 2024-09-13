@@ -1,14 +1,16 @@
 <?php
 
+namespace App\Services;
+
 class NewsManager
 {
 	private static $instance = null;
 
 	private function __construct()
 	{
-		require_once(ROOT . '/utils/DB.php');
-		require_once(ROOT . '/utils/CommentManager.php');
-		require_once(ROOT . '/class/News.php');
+		require_once(ROOT . '/Utils/DB.php');
+		require_once(ROOT . '/Utils/CommentManager.php');
+		require_once(ROOT . '/Class/News.php');
 	}
 
 	public static function getInstance()

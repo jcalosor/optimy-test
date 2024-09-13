@@ -1,13 +1,15 @@
 <?php
 
+namespace App\Services;
+
 class CommentManager
 {
 	private static $instance = null;
 
 	private function __construct()
 	{
-		require_once(ROOT . '/utils/DB.php');
-		require_once(ROOT . '/class/Comment.php');
+		require_once(ROOT . '/Utils/DB.php');
+		require_once(ROOT . '/Class/Comment.php');
 	}
 
 	public static function getInstance()

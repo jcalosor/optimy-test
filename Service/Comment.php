@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Services;
+
 class Comment
 {
 	protected $id, $body, $createdAt, $newsId;

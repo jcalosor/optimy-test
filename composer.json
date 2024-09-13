@@ -1,0 +1,16 @@
+{
+    "name": "jerric/optimy",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Jerric Calosor",
+            "email": "j.calosor@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^11.3"
+    },
+    "autoload": {
+      "files": ["Services/*", "Utils/*"]
+    }
+}

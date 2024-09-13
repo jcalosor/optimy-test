@@ -1,0 +1,7 @@
+## Development Server
+
+### Install PHP 8.2 dependencies
+sudo yum install php82 php82-mbstring php82-xml php82-fpm php82-pdo php82-mysqlnd mysql57-server nginx git
+
+### Check if PHP has been installed properly
+sudo service php-fpm status; sudo service nginx status;
