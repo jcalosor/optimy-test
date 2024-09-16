@@ -34,18 +34,33 @@ Also added dependency injection (DI) to increase the testability of the implemen
 1. Containerization, using docker, making the app more portable, therefore can be setup to a multitude of environments ( Mac, Linux as tested )
 2. Added composer autoloader to easily manage autoloading of classes, this enabled the app to implement PSR-12 namespace & import class statements
 3. Implementing application structure that imposes categorization of code by functionality:
+
    ![img_1.png](img_1.png)
+
    * Accessor - for the setter and getter class
    * Providers - "provides" the resolved instance of classes needed to be registered in the container
    * Utils - Common `service` class
 4. Created a IoC manager logic that enables reusable "resolved" classes to be used across the application:
+
     ![img_4.png](img_4.png)
+
     ![img_2.png](img_2.png)
-5. Created a bootstrapper logic that will knit these resolved classes together to be available at run time.
+
+6. Created a bootstrapper logic that will knit these resolved classes together to be available at run time.
     ![img_3.png](img_3.png)
+
 5. Refactored `App\Utils\NewsManager` class and implemented a new method `listNewsWithComments` that minimizes the database call to only 1 for getting the list of news along with it's respective comments
+    * It's important to note that querying over a loop is relatively "bad practice" and risky due to multiple calls made on the database during the loop, 
+      as the application scales the amount of database calls will also increase, this poses memory leaks and timeout errors due to potential garbage collection issue,
+      minimizing database queries is the preferred approach and just chunking through the retrieve list through php data mutation algorithm is less process intensive, 
+      with potentially having the same load in memory, but much more efficient in management of data.
+   
 ![img_5.png](img_5.png)
+
 6. Written a sample unit test
+
 ![img_6.png](img_6.png)
+
 7. Added .env for environment variable control, the database credentials are stored here.
+
 ![img_7.png](img_7.png)
