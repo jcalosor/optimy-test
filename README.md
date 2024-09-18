@@ -16,6 +16,17 @@ These installation steps assumes that docker is already installed.
 6. `docker exec -ti docker_api_1 bash` 
 7. `composer install`
 8. `cp env.example .env`
+9. Accessing the database in your mysql client, these are the following creds:
+   ```
+    Hostname: 0.0.0.0
+    Port: 33069
+    User: root
+    Password: vuQ4NTLahMJGUKaDCx6s
+   ```   
+ ![image](https://github.com/user-attachments/assets/510f0c3f-286f-4da9-b5f3-7f0cad0dfcf8)
+ 
+ 10. Import the sql dump `dbdump.sql`
+
 
 # Testing
 1. Access the app's container `docker exec -ti docker_api_1 bash`
